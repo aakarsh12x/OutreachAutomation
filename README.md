@@ -2,7 +2,7 @@
 
 A production-ready Node.js + TypeScript CLI that automates end-to-end B2B cold outreach. Given a single seed domain, this pipeline autonomously discovers lookalike companies, finds decision-makers, resolves verified work emails, and sends highly personalized outreach emails.
 
-## 🚀 The Pipeline Flow
+##  The Pipeline Flow
 
 The system runs entirely hand-off free in four distinct stages:
 
@@ -13,7 +13,7 @@ The system runs entirely hand-off free in four distinct stages:
 
 *Every stage's output feeds the next stage's input automatically. Zero manual hand-offs.*
 
-## ✨ Key Features
+##  Key Features
 
 - **Resilient Architecture**: Uses a custom `HttpClient` built on top of `p-limit` that handles concurrency, HTTP `retry-after` headers, and exponential backoff.
 - **Fault Tolerant**: Uses `Promise.all` with individual catch blocks. A single API failure (e.g., one unresolvable contact) will be safely logged and omitted without crashing the pipeline.
@@ -21,7 +21,7 @@ The system runs entirely hand-off free in four distinct stages:
 - **Safety Checkpoints**: Halts execution before dispatching emails, providing a full summary of companies found, contacts scraped, and emails verified.
 - **Type-Safe**: Strictly validated environment variables and API responses using `Zod`.
 
-## ⚙️ Setup & Installation
+##  Setup & Installation
 
 ### Prerequisites
 - Node.js >= 20
@@ -51,7 +51,7 @@ BREVO_SENDER_EMAIL=hello@yourdomain.com
 BREVO_SENDER_NAME="Your Name"
 ```
 
-## 🛠️ Usage
+##  Usage
 
 Run the pipeline by passing a single seed domain:
 
@@ -63,7 +63,7 @@ The CLI will stream its progress through the 4 stages. Once email resolution is 
 
 *All results and failures are atomically written to `output/results.json` at the end of the run.*
 
-## 🧪 Development & Testing
+##  Development & Testing
 
 ```bash
 # Build the TypeScript project
@@ -76,7 +76,7 @@ npm test
 npm run lint
 ```
 
-## 📝 Email Templates
+##  Email Templates
 
 You can configure the outreach copy in your `.env` file using the following supported variables:
 `{{name}}`, `{{firstName}}`, `{{title}}`, `{{company}}`, `{{domain}}`, `{{email}}`
